@@ -6,9 +6,9 @@ Notre fichier `index.html` a 5400 divs à l'interieur. Les divs sont de petits c
 
 # Etape 1 - Add Class
 
-La première chose à nos «pixels» faire est de changer la couleur. Ces petits gars seront les blocs de construction de notre œuvre d'art. Avec  la v1 de notre application, nous allons juste faire des pixels noirs et blancs. Non pas parce que nous ne pouvons pas avoir des couleurs, mais nous aurons besoin de sauver quelques fonctionnalités pour la v2?
+La première chose a faire à nos «pixels»  est de changer la couleur. Ces petits gars seront les blocs de construction de notre œuvre d'art. Avec  la v1 de notre application, nous allons juste faire des pixels noirs et blancs. Non pas parce que nous ne pouvons pas avoir des couleurs, mais nous aurons besoin de créer quelques fonctionnalités pour la v2 ?
 
-- Initialiser notre fichier `app.js`  par le cahargement du document quand il est prêt.
+- Initialiser notre fichier `app.js`  par le chargement du document quand il est prêt.
 
 ``` javascript
   $(document).ready(function() {
@@ -16,11 +16,11 @@ La première chose à nos «pixels» faire est de changer la couleur. Ces petits
   })
 ```
 
-ATout votre code va se situer entre ces lignes de code.
+Tout votre code va se situer entre ces lignes de code.
 
 - Faire en sorte que lorsque l'on clique sur un pixel, il devient blanc
-  - Dans la notre fichier index.html chaque div a la classe de «boîte»
-  - Nous pouvons utiliser cette classe de boîte comme notre sélecteur. Cela nous donne un moyen d'interagir avec votre DOM
+  - Dans la notre fichier index.html chaque div a la classe de 'box'
+  - Nous pouvons utiliser cette classe de "box" comme notre sélecteur. Cela nous donne un moyen d'interagir avec votre DOM
 
 ``` javascript
   $('.box').on('click', function() {
@@ -29,12 +29,12 @@ ATout votre code va se situer entre ces lignes de code.
 
 ```
 
-Notre fichier style.css a une classe nommée blanche. Tout ce qu'elle fait est de changer l'arrière-plan des boîtes du noir au blanc.
+Notre fichier style.css a une classe nommée white. Tout ce qu'elle fait est de changer l'arrière-plan des boîtes du noir au blanc.
 
-En théorie, cela changerait la boîte noire au clique en boîte blanche, mais que se passe-t-il quand on essaye ?
-Il semble que lorsque l'on clique sur une boîte, toutes nos boîtes se changent en blanc!
+En théorie, cela changerait la boîte noire au clique en boîte white, mais que se passe-t-il quand on essaye ?
+Il semble que lorsque l'on clique sur une box, toutes nos boîtes se changent en blanc!
 
-En effet, ils partagent tous la même classe, par le nom de la boîte. Nous sommes en train de dire à jQuery que tout se qui se refère à la classe  «boîte» devrait aussi être classe «blanc». Ceci est un problème commun dans jQuery. Maintenant, nous pourrions donner à chaque div dans la liste de toutes les 5400 des div leur propre ID unique, mais j'ai une meilleure idée.
+En effet, ils partagent tous la même classe, par le nom de la box. Nous sommes en train de dire à jQuery que tout se qui se refère à la classe  «box» devrait aussi être classe «white». Ceci est un problème commun dans jQuery. Maintenant, nous pourrions donner à chaque div dans la liste de toutes les 5400 des div leur propre ID unique, mais j'ai une meilleure idée.
 
 - Utilisez le 'this' mot-clé
 
