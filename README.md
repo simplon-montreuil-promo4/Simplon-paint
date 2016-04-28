@@ -1,159 +1,158 @@
-# Comprendre jQuery - Paint
+# Understanding jQuery - Paint
 
-Ce projet à pour but de vous faire mieux comprendre la manipulation basique du DOM en créant programme ! Un peu comme Microsoft Paint.
+This project aims to make you understand the basic DOM manipulation by creating program! A bit like Microsoft Paint.
 
-Notre fichier `index.html` a 5400 divs à l'interieur. Les divs sont de petits carrés noirs. Ces carrés representent chaque pixels de notre programme. On ne se preoccupera pas du HTML & du CSS. Juste notre fichier nommé app.js
+Our `index.html` file 5400 divs in the house. Divs are small black square. These squares represent each pixel of our program. We did not preoccupy the HTML & CSS. Just our file named app.js
 
-# Etape 1 - Add Class
+Step # 1 - Add Class
 
-La première chose a faire à nos «pixels»  est de changer la couleur. Ces petits gars seront les blocs de construction de notre œuvre d'art. Avec  la v1 de notre application, nous allons juste faire des pixels noirs et blancs. Non pas parce que nous ne pouvons pas avoir des couleurs, mais nous aurons besoin de créer quelques fonctionnalités pour la v2 ?
+The first thing to do in our "pixels" is to change the color. These little guys are the building blocks of our artwork. With v1 our application, we'll just make black and white pixels. Not because we can not have colors, but we will need to create a few features for v2?
 
-- Initialiser notre fichier `app.js`  par le chargement du document quand il est prêt.
+- Initialize our file `app.js` by loading the document when it is ready.
 
-``` javascript
-  $(document).ready(function() {
-  // votre code
+```Javascript
+  $ (Document) .ready (function () {
+  // your code
   })
 ```
 
-Tout votre code va se situer entre ces lignes de code.
+All your code will be between these lines of code.
 
-- Faire en sorte que lorsque l'on clique sur un pixel, il devient blanc
-  - Dans la notre fichier index.html chaque div a la classe de 'box'
-  - Nous pouvons utiliser cette classe de "box" comme notre sélecteur. Cela nous donne un moyen d'interagir avec votre DOM
+- Ensure that when you click on a pixel, it becomes white
+  - In our index.html each div has class 'box'
+  - We can use this class "box" as our selector. This gives us a way to interact with your DOM
 
-``` javascript
-  $('.box').on('click', function() {
-    $('.box').addClass('white');
+```Javascript
+  $ ( '. Box'). It ( 'click', function () {
+    $ ( 'Box.') AddClass ( 'white').
   })
 
 ```
 
-Notre fichier style.css a une classe nommée white. Tout ce qu'elle fait est de changer l'arrière-plan des boîtes du noir au blanc.
+Our style.css file a class called white. Everything she does is to change the background from black to white boxes.
 
-En théorie, cela changerait la boîte noire au clique en boîte white, mais que se passe-t-il quand on essaye ?
-Il semble que lorsque l'on clique sur une box, toutes nos boîtes se changent en blanc!
+In theory, it would change the black box to click white box, but what's happening when you try?
+It seems that when you click on a box, all our boxes are changed into white!
 
-En effet, ils partagent tous la même classe, par le nom de la box. Nous sommes en train de dire à jQuery que tout se qui se refère à la classe  «box» devrait aussi être classe «white». Ceci est un problème commun dans jQuery. Maintenant, nous pourrions donner à chaque div dans la liste de toutes les 5400 des div leur propre ID unique, mais j'ai une meilleure idée.
+Indeed, they all share the same class with the name of the box. We are saying to jQuery that everything which refers to the class "box" should also be "white" class. This is a common problem in jQuery. Now we could give each div in the list of all 5400 div their own unique ID, but I have a better idea.
 
-- Utilisez le 'this' mot-clé
+- Use the 'this' keyword
 
-``` javascript
-  $('.box').on('click', function() {
-    $(this).addClass('white');
+```Javascript
+  $ ( '. Box'). It ( 'click', function () {
+    $ (This) .addClass ( 'white');
   })
 ```
 
-Le mot-clé 'this' est vraiement commun en JavaScript et ça peut être confus. Dans ce cas, avec notre code jQuery, il fait référence à la case spécifique sur laquelle nous avons cliqué . Souvent, vous vous retrouvez dans des positions où vous avez besoin de changer une chose, dans un tableau de beaucoup. Si jamais vous vous retrouvez a changer chacun d'eux, expérimenter avec 'this' un peu.
+The keyword 'this' s really common in JavaScript, and it can be confused. In this case, our jQuery code, it refers to the specific case on which we clicked. Often you find yourself in positions where you need to change something in a picture of many. If you ever find yourself in changing each of them, experiment with 'this' a little.
 
-## Etape 2 - Edits
+## Step 2 - Edits
 
-Super, maintenant nous pouvons créer de belles œuvres d'art. art en noir et blanc, mais l'art néanmoins. Mais que se passe-t-il quand on fait une erreur ? Il n'y a aucun moyen de modifier notre œuvre. Nous allons corriger cela.
+Great, now we can create beautiful works of art. art black and white, but art nonetheless. But what happens when we make a mistake? There is no way to change our work. We'll fix that.
 
-- Faire en sorte que lorsque l'on double clic, il change de nouveau au noir avec `removeclass`
+- Ensure that when you double click, it changes back to black with `removeclass`
 
-``` javascript
-  $('.box').on('click', function() {
-    $(this).addClass('white');
+```Javascript
+  $ ( '. Box'). It ( 'click', function () {
+    $ (This) .addClass ( 'white');
   })
 
-  $('.box').on('dblclick', function() {
-    $(this).removeClass('white');
+  $ ( '. Box'). One ( 'dblclick', function () {
+    $ (This) .removeClass ( 'white');
   })
 ```
 
-## Etape 3 - Reset Button
+## Step 3 - Reset Button
 
-Il semble que nous avons un bouton de réinitialisation. Faisons-le fonctionner. Rappelez-vous comment nous pourrions envoyer des commandes de couverture sur l'ensemble de nos pixels en utilisant le nom de la classe au lieu du pixel individuel ? Nous allons utiliser cette méthode pour créer notre bouton de réinitialisation.
+It seems we have a reset button. Let it run. Remember how we could send blanket orders on all our pixels using the class name instead of individual pixel? We will use this method to create our reset button.
 
-- Soyez sur que votre bouton
+- Be on your button
 
-``` javascript
-  $('#reset').on('click', function() {
-    $('.box').removeClass('white')
+```Javascript
+  $ ( '# Reset'). It ( 'click', function () {
+    $ ( '. Box'). RemoveClass ( 'white')
   })
 ```
 
 ## Step 4 - Color Pallette
 
-Faisons que nos boutons de couleur fonctionnent!
+Let our color buttons work!
 
-- Créer une variable de couleur, et définir la valeur par défaut en blanc. Cette variable de couleur sera la classe nous ajouterons.
+- Create a color variable, and set the default blank. This color variable is the class we add.
 
-``` javascript
+```Javascript
   var color = 'white'
 ```
 
+- Create a click event for each color that changes color variable when clicking
 
-- Créer un événement de clic pour chaque couleur qui change la variable de couleur lors d'un clic
-
-``` javascript
-  $('#red').on('click', function() {
+```Javascript
+  $ ( '# Red'). It ( 'click', function () {
     color = 'red';
   })
 
-  $('#blue').on('click', function() {
+  $ ( '# Blue'). It ( 'click', function () {
     color = 'blue';
   })
 
-  $('#green').on('click', function() {
+  $ ( '# Green'). It ( 'click', function () {
     color = 'green';
   })
 
-  $('#yellow').on('click', function() {
+  $ ( '# Yellow'). It ( 'click', function () {
     color = 'yellow';
   })
 
-  $('#white').on('click', function() {
+  $ ( '# White'). It ( 'click', function () {
     color = 'white';
   })
 ```
 
-- Mettre à jour la fonctionnalité de classe add pour refléter notre variable de couleur plutôt que nos noms de classes réelles
+- Update the add-class functionality to reflect our color variable rather than our actual class names
 
-``` javascript
+```Javascript
 
-  $('.box').on('click', function() {
-    $(this).addClass(color);
+  $ ( '. Box'). It ( 'click', function () {
+    $ (This) .addClass (color);
   })
 
-  $('.box').on('dblclick', function() {
-    $(this).removeClass(color);
+  $ ( '. Box'). One ( 'dblclick', function () {
+    $ (This) .removeClass (color);
   })
 
-  $('#reset').on('click', function() {
-    $('.box').removeClass(color)
-  })
-
-```
-
-Une dernière chose qui est un peu foiré. Nos fonctions de réinitialisation et double-clic ne fonctionne pas pour le moment. Parce que nous avons placé la variable «couleur» à la place de l'action de la classe de suppression, il ne fera que respecter la couleur actuellement sélectionnée.
-
-Dans la fonction jQuery de nous avons la possibilité de supprimer plusieurs classes de seulement séparant chaque classe, nous voulons supprimer par un espace, comme suit:
-
-``` javascript
-
-  $('.box').removeClass('red blue green yellow white');
-
-```
-
-Ce qui est faisable, mais nous allons juste mettre ceux-là dans une variable de sorte que nous n'ayant pas besoin d'écrire autant de code
-
-``` javascript
-
-  var colors = 'white green red blue yellow'
-
-  $('.box').on('dblclick', function() {
-    $(this).removeClass(colors);
-  })
-
-  $('#reset').on('click', function() {
-    $('.box').removeClass(colors)
+  $ ( '# Reset'). It ( 'click', function () {
+    $ ( '. Box'). RemoveClass (color)
   })
 
 ```
-Et voilà c'est fini, on a fini de setup notre application. Libre à vous d'ajouter des fonctionnalités. Enjoy !
+
+One last thing that is a little messed up. Our reset functions and double-click does not work yet. Because we set the "color" variable instead of the action of class suppression, it will only observe the currently selected color.
+
+In the jQuery function we have the ability to delete multiple classes of only separating each class, we want to remove by a space, as follows:
+
+```Javascript
+
+  $ ( 'Box.') RemoveClass ( 'red blue green yellow white.');
+
+```
+
+What is feasible, but we'll just put those in a variable so that we do not need to write much code
+
+```Javascript
+
+  var colors = 'white blue green red yellow'
+
+  $ ( '. Box'). One ( 'dblclick', function () {
+    $ (This) .removeClass (colors);
+  })
+
+  $ ( '# Reset'). It ( 'click', function () {
+    $ ( '. Box'). RemoveClass (colors)
+  })
+
+```
+And now it's over, we finished our setup application. Feel free to add functionality. Enjoy!
 
 ## Copyright
 
-© Rodolpe D. pour Simplon.co, 2016.
+© D. Rodolpe for Simplon.co, 2016.
