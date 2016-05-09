@@ -1,14 +1,14 @@
 # Comprendre jQuery - Paint
 
-Ce projet à pour but de vous faire mieux comprendre la manipulation basique du DOM en créant programme ! Un peu comme Microsoft Paint.
+Ce projet à pour but de vous faire mieux comprendre la manipulation basique du `DOM` en créant programme ! Un peu comme **Microsoft Paint**.
 
-Notre fichier `index.html` a 5400 divs à l'interieur. Les divs sont de petits carrés noirs. Ces carrés representent chaque pixels de notre programme. On ne se preoccupera pas du HTML & du CSS. Juste notre fichier nommé app.js
+Notre fichier `index.html` a 5400 divs à l'interieur. Les divs sont de petits carrés noirs. Ces carrés representent chaque pixels de notre programme. On ne se preoccupera pas du **HTML** & du **CSS**. Juste notre fichier nommé `app.js`.
 
-# Etape 1 - Add Class
+## Etape 1 - Ajouter la Classe
 
-La première chose a faire à nos «pixels»  est de changer la couleur. Ces petits gars seront les blocs de construction de notre œuvre d'art. Avec  la v1 de notre application, nous allons juste faire des pixels noirs et blancs. Non pas parce que nous ne pouvons pas avoir des couleurs, mais nous aurons besoin de créer quelques fonctionnalités pour la v2 ?
+La première chose a faire à nos « pixels » est de changer la couleur. Ces petits gars seront les blocs de construction de notre œuvre d'art. Avec la v1 de notre application, nous allons juste faire des pixels noirs et blancs. Non pas parce que nous ne pouvons pas avoir des couleurs, mais nous aurons besoin de créer quelques fonctionnalités pour la v2 ?
 
-- Initialiser notre fichier `app.js`  par le chargement du document quand il est prêt.
+- Initialiser notre fichier `app.js` par le chargement du document quand il est prêt.
 
 ``` javascript
   $(document).ready(function() {
@@ -18,25 +18,24 @@ La première chose a faire à nos «pixels»  est de changer la couleur. Ces pet
 
 Tout votre code va se situer entre ces lignes de code.
 
-- Faire en sorte que lorsque l'on clique sur un pixel, il devient blanc
-  - Dans la notre fichier index.html chaque div a la classe de 'box'
-  - Nous pouvons utiliser cette classe de "box" comme notre sélecteur. Cela nous donne un moyen d'interagir avec votre DOM
+- Faire en sorte que lorsque l'on clique sur un pixel, il devient blanc :
+  - Dans la notre fichier `index.html` chaque div a la classe de `box`
+  - Nous pouvons utiliser cette classe de `box` comme notre sélecteur. Cela nous donne un moyen d'interagir avec votre `DOM`
 
 ``` javascript
   $('.box').on('click', function() {
     $('.box').addClass('white');
   })
-
 ```
 
-Notre fichier style.css a une classe nommée white. Tout ce qu'elle fait est de changer l'arrière-plan des boîtes du noir au blanc.
+Notre fichier `style.css` a une classe nommée `white`. Tout ce qu'elle fait est de changer l'arrière-plan des boîtes du noir au blanc.
 
-En théorie, cela changerait la boîte noire au clique en boîte white, mais que se passe-t-il quand on essaye ?
+En théorie, cela changerait la boîte noire au clique en boîte `white`, mais que se passe-t-il quand on essaye ?
 Il semble que lorsque l'on clique sur une box, toutes nos boîtes se changent en blanc!
 
-En effet, ils partagent tous la même classe, par le nom de la box. Nous sommes en train de dire à jQuery que tout se qui se refère à la classe  «box» devrait aussi être classe «white». Ceci est un problème commun dans jQuery. Maintenant, nous pourrions donner à chaque div dans la liste de toutes les 5400 des div leur propre ID unique, mais j'ai une meilleure idée.
+En effet, ils partagent tous la même classe, par le nom de la `box`. Nous sommes en train de dire à **jQuery** que tout se qui se refère à la classe `box` devrait aussi être classe `white`. Ceci est un problème commun dans **jQuery**. Maintenant, nous pourrions donner à chaque div de la liste des 5400 divs leur propre ID unique, mais j'ai une meilleure idée.
 
-- Utilisez le 'this' mot-clé
+- Utilisez le mot-clé `this`:
 
 ``` javascript
   $('.box').on('click', function() {
@@ -44,7 +43,7 @@ En effet, ils partagent tous la même classe, par le nom de la box. Nous sommes 
   })
 ```
 
-Le mot-clé 'this' est vraiement commun en JavaScript et ça peut être confus. Dans ce cas, avec notre code jQuery, il fait référence à la case spécifique sur laquelle nous avons cliqué . Souvent, vous vous retrouvez dans des positions où vous avez besoin de changer une chose, dans un tableau de beaucoup. Si jamais vous vous retrouvez a changer chacun d'eux, expérimenter avec 'this' un peu.
+Le mot-clé `this` est vraiment commun en JavaScript et ça peut être confus. Dans ce cas, avec notre code **jQuery**, il fait référence à la case spécifique sur laquelle nous avons cliqué. Souvent, vous vous retrouvez dans des positions où vous avez besoin de changer une chose, dans un tableau de beaucoup. Si jamais vous vous retrouvez a changer chacun d'eux, expérimenter avec `this` un peu.
 
 ## Etape 2 - Edits
 
