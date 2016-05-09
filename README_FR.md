@@ -10,10 +10,10 @@ La première chose a faire à nos « pixels » est de changer la couleur. Ces pe
 
 - Initialiser notre fichier `app.js` par le chargement du document quand il est prêt.
 
-``` javascript
+```javascript
   $(document).ready(function () {
   // votre code
-  })
+  });
 ```
 
 Tout votre code va se situer entre ces lignes de code.
@@ -22,10 +22,10 @@ Tout votre code va se situer entre ces lignes de code.
   - Dans la notre fichier `index.html` chaque div a la classe de `box`
   - Nous pouvons utiliser cette classe de `box` comme notre sélecteur. Cela nous donne un moyen d'interagir avec votre `DOM`
 
-``` javascript
+```javascript
   $('.box').on('click', function () {
     $('.box').addClass('white');
-  })
+  });
 ```
 
 Notre fichier `style.css` a une classe nommée `white`. Tout ce qu'elle fait est de changer l'arrière-plan des boîtes du noir au blanc.
@@ -37,10 +37,10 @@ En effet, ils partagent tous la même classe, par le nom de la `box`. Nous somme
 
 - Utilisez le mot-clé `this`:
 
-``` javascript
+```javascript
   $('.box').on('click', function () {
     $(this).addClass('white');
-  })
+  });
 ```
 
 Le mot-clé `this` est vraiment commun en JavaScript et ça peut être confus. Dans ce cas, avec notre code **jQuery**, il fait référence à la case spécifique sur laquelle nous avons cliqué. Souvent, vous vous retrouvez dans des positions où vous avez besoin de changer une chose, dans un tableau de beaucoup. Si jamais vous vous retrouvez a changer chacun d'eux, expérimenter avec `this` un peu.
@@ -51,26 +51,26 @@ Super, maintenant nous pouvons créer de belles œuvres d'art, de l'art en noir 
 
 - Faire en sorte que lorsque l'on double clic, il change de nouveau au noir avec `removeClass` :
 
-``` javascript
+```javascript
   $('.box').on('click', function () {
     $(this).addClass('white');
-  })
+  });
 
   $('.box').on('dblclick', function () {
     $(this).removeClass('white');
-  })
+  });
 ```
 
-## Etape 3 - Reset Button
+## Etape 3 - Bouton Réinitialiser
 
 Il semble que nous avons un bouton de réinitialisation. Faisons-le fonctionner. Rappelez-vous comment nous pourrions envoyer des commandes de couverture sur l'ensemble de nos pixels en utilisant le nom de la classe au lieu du pixel individuel ? Nous allons utiliser cette méthode pour créer notre bouton de réinitialisation.
 
-- Soyez sur que votre bouton
+- Soyez sur que vos boutons soit blancs :
 
-``` javascript
-  $('#reset').on('click', function() {
-    $('.box').removeClass('white')
-  })
+```javascript
+  $('#reset').on('click', function () {
+    $('.box').removeClass('white');
+  });
 ```
 
 ## Step 4 - Color Pallette
@@ -79,8 +79,8 @@ Faisons que nos boutons de couleur fonctionnent!
 
 - Créer une variable de couleur, et définir la valeur par défaut en blanc. Cette variable de couleur sera la classe nous ajouterons.
 
-``` javascript
-  var color = 'white'
+```javascript
+  var color = 'white';
 ```
 
 
