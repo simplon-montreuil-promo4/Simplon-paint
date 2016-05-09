@@ -11,7 +11,7 @@ La première chose a faire à nos « pixels » est de changer la couleur. Ces pe
 - Initialiser notre fichier `app.js` par le chargement du document quand il est prêt.
 
 ``` javascript
-  $(document).ready(function() {
+  $(document).ready(function () {
   // votre code
   })
 ```
@@ -23,7 +23,7 @@ Tout votre code va se situer entre ces lignes de code.
   - Nous pouvons utiliser cette classe de `box` comme notre sélecteur. Cela nous donne un moyen d'interagir avec votre `DOM`
 
 ``` javascript
-  $('.box').on('click', function() {
+  $('.box').on('click', function () {
     $('.box').addClass('white');
   })
 ```
@@ -38,25 +38,25 @@ En effet, ils partagent tous la même classe, par le nom de la `box`. Nous somme
 - Utilisez le mot-clé `this`:
 
 ``` javascript
-  $('.box').on('click', function() {
+  $('.box').on('click', function () {
     $(this).addClass('white');
   })
 ```
 
 Le mot-clé `this` est vraiment commun en JavaScript et ça peut être confus. Dans ce cas, avec notre code **jQuery**, il fait référence à la case spécifique sur laquelle nous avons cliqué. Souvent, vous vous retrouvez dans des positions où vous avez besoin de changer une chose, dans un tableau de beaucoup. Si jamais vous vous retrouvez a changer chacun d'eux, expérimenter avec `this` un peu.
 
-## Etape 2 - Edits
+## Etape 2 - Editions
 
-Super, maintenant nous pouvons créer de belles œuvres d'art. art en noir et blanc, mais l'art néanmoins. Mais que se passe-t-il quand on fait une erreur ? Il n'y a aucun moyen de modifier notre œuvre. Nous allons corriger cela.
+Super, maintenant nous pouvons créer de belles œuvres d'art, de l'art en noir et blanc, mais de l'art néanmoins. Mais que se passe-t-il quand on fait une erreur ? Il n'y a aucun moyen de modifier notre œuvre. Nous allons corriger cela.
 
-- Faire en sorte que lorsque l'on double clic, il change de nouveau au noir avec `removeclass`
+- Faire en sorte que lorsque l'on double clic, il change de nouveau au noir avec `removeClass` :
 
 ``` javascript
-  $('.box').on('click', function() {
+  $('.box').on('click', function () {
     $(this).addClass('white');
   })
 
-  $('.box').on('dblclick', function() {
+  $('.box').on('dblclick', function () {
     $(this).removeClass('white');
   })
 ```
