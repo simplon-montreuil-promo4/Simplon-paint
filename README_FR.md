@@ -2,6 +2,8 @@
 
 Ce projet à pour but de vous faire mieux comprendre la manipulation basique du `DOM` en créant un programme ! Un peu comme **Microsoft Paint**.
 
+![Microsoft Paint](paintscreen.gif)
+
 Notre fichier `index.html` a 5400 divs à l'interieur. Les divs sont de petits carrés noirs. Ces carrés representent chaque pixels de notre programme. On ne se preoccupera pas du **HTML** & du **CSS**. Juste notre fichier nommé `app.js`.
 
 ## Etape 1 - Ajouter la Classe

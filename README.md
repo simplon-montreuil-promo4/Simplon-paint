@@ -2,6 +2,8 @@
 
 This project aims to make you understand the basic manipulation of `DOM` creating a program! A bit like **Microsoft Paint**.
 
+![Microsoft Paint](paintscreen.gif)
+
 Our `index.html` file contains 5400 divs. Divs are small black square. These squares represent each pixel of our program. You does not preoccupy the **HTML** & **CSS**. Just our file named `app.js`.
 
 ## Step 1 - Add Class
