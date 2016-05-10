@@ -53,27 +53,27 @@ Great, now we can create beautiful works of art, art in black and white, but art
 
 - Ensure that when you double click, it changes back to black with `removeClass`:
 
-`` `Javascript
-  $ ( '. Box'). It ( 'click', function () {
-    $ (This) .addClass ( 'white');
+```javascript
+  $('.box').on('click', function () {
+    $(this).addClass('white');
   });
 
-  $ ( '. Box'). One ( 'dblclick', function () {
-    $ (This) .removeClass ( 'white');
+  $('.box').on('dblclick', function () {
+    $(this).removeClass('white');
   });
-`` `
+```
 
 ## Step 3 - Reset button
 
 It seems we have a reset button. Let it run. Remember how we could send blanket orders on all our pixels using the class name instead of individual pixel? We will use this method to create our reset button.
 
-- Be sure your buttons or white:
+- Be sure your buttons are white:
 
-`` `Javascript
-  $ ( '# Reset'). It ( 'click', function () {
-    $ ( 'Box.') RemoveClass ( 'white').
+```javascript
+  $('#reset').on('click', function () {
+    $('.box').removeClass('white');
   });
-`` `
+```
 
 ## Step 4 - Color Palette
 
