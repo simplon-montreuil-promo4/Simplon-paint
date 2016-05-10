@@ -35,17 +35,17 @@ Our `style.css` file have a class named `white`. Everything it does is to change
 In theory, it would change the black box to click on `white` box, but what's happening when you try?
 It seems that when you click on a box, all our boxes are changed into white!
 
-Indeed, they all share the same class with the name of the `box`. We are telling jQuery ** ** that everything which refers to the `box` class should be` white` class. This is a common problem in jQuery ** **. Now we could give each div in the list of 5400 divs their own unique ID, but I have a better idea.
+Indeed, they all share the same class with the name of the `box`. We are telling **jQuery** that everything which refers to the `box` class should be `white` class. This is a common problem in **jQuery**. Now we could give each div in the list of 5400 divs their own unique ID, but I have a better idea.
 
 - Use the keyword `this`:
 
-`` `Javascript
-  $ ( '. Box'). It ( 'click', function () {
-    $ (This) .addClass ( 'white');
+```javascript
+  $('.box').on('click', function () {
+    $(this).addClass('white');
   });
-`` `
+```
 
-The keyword `this` is really common in JavaScript, and it can be confused. In this case, our ** ** jQuery code, it refers to the specific case on which we clicked. Often you find yourself in positions where you need to change something in a picture of many. If you ever find yourself in changing each of them, experiment with `this` a bit.
+The keyword `this` is really common in JavaScript, and it can be confused. In this case, our **jQuery** code, it refers to the specific case on which we clicked. Often you find yourself in positions where you need to change something in a picture of many. If you ever find yourself in changing each of them, experiment with `this` a bit.
 
 ## Step 2 - Editions
 
