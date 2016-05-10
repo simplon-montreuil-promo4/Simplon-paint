@@ -73,7 +73,7 @@ Il semble que nous avons un bouton de réinitialisation. Faisons-le fonctionner.
   });
 ```
 
-## Step 4 - Color Pallette
+## Step 4 - Palette de Couleurs
 
 Faisons que nos boutons de couleur fonctionnent!
 
@@ -83,76 +83,66 @@ Faisons que nos boutons de couleur fonctionnent!
   var color = 'white';
 ```
 
+- Créer un événement de clic pour chaque couleur qui change la variable de couleur lors d'un clic :
 
-- Créer un événement de clic pour chaque couleur qui change la variable de couleur lors d'un clic
-
-``` javascript
-  $('#red').on('click', function() {
+```javascript
+  $('#red').on('click', function () {
     color = 'red';
-  })
+  });
 
-  $('#blue').on('click', function() {
+  $('#blue').on('click', function () {
     color = 'blue';
-  })
+  });
 
-  $('#green').on('click', function() {
+  $('#green').on('click', function () {
     color = 'green';
-  })
+  });
 
-  $('#yellow').on('click', function() {
+  $('#yellow').on('click', function () {
     color = 'yellow';
-  })
+  });
 
-  $('#white').on('click', function() {
+  $('#white').on('click', function () {
     color = 'white';
-  })
+  });
 ```
 
-- Mettre à jour la fonctionnalité de classe add pour refléter notre variable de couleur plutôt que nos noms de classes réelles
+- Mettre à jour la fonctionnalité de classe `add` pour refléter notre variable de couleur plutôt que nos noms de classes réelles :
 
-``` javascript
-
-  $('.box').on('click', function() {
+```javascript
+  $('.box').on('click', function () {
     $(this).addClass(color);
-  })
+  });
 
-  $('.box').on('dblclick', function() {
+  $('.box').on('dblclick', function () {
     $(this).removeClass(color);
-  })
+  });
 
-  $('#reset').on('click', function() {
+  $('#reset').on('click', function () {
     $('.box').removeClass(color)
-  })
-
+  });
 ```
 
-Une dernière chose qui est un peu foiré. Nos fonctions de réinitialisation et double-clic ne fonctionne pas pour le moment. Parce que nous avons placé la variable «couleur» à la place de l'action de la classe de suppression, il ne fera que respecter la couleur actuellement sélectionnée.
+Une dernière chose qui est un peu foiré. Nos fonctions de réinitialisation et double-clic ne fonctionne pas pour le moment. Parce que nous avons placé la variable `color` à la place de l'action de la classe de suppression, il ne fera que respecter la couleur actuellement sélectionnée.
 
-Dans la fonction jQuery de nous avons la possibilité de supprimer plusieurs classes de seulement séparant chaque classe, nous voulons supprimer par un espace, comme suit:
+Dans la fonction jQuery de nous avons la possibilité de supprimer plusieurs classes de seulement séparant chaque classe, nous voulons supprimer par un espace, comme suit :
 
-``` javascript
-
+```javascript
   $('.box').removeClass('red blue green yellow white');
-
 ```
 
-Ce qui est faisable, mais nous allons juste mettre ceux-là dans une variable de sorte que nous n'ayant pas besoin d'écrire autant de code
+Ce qui est faisable, mais nous allons juste mettre ceux-là dans une variable de sorte que nous n'ayant pas besoin d'écrire autant de code :
 
-``` javascript
-
+```javascript
   var colors = 'white green red blue yellow'
-
-  $('.box').on('dblclick', function() {
+  
+  $('.box').on('dblclick', function () {
     $(this).removeClass(colors);
-  })
+  });
 
-  $('#reset').on('click', function() {
+  $('#reset').on('click', function () {
     $('.box').removeClass(colors)
-  })
-
+  });
 ```
+
 Et voilà c'est fini, on a fini de setup notre application. Libre à vous d'ajouter des fonctionnalités. Enjoy !
-
-## Copyright
-
-© Rodolpe D. pour Simplon.co, 2016.
