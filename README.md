@@ -1,8 +1,8 @@
 # Understanding jQuery - Paint
 
-This project aims to make you understand the basic manipulation of `DOM` creating program! A bit like Microsoft Paint ** **.
+This project aims to make you understand the basic manipulation of `DOM` creating a program! A bit like **Microsoft Paint**.
 
-Our `index.html` file 5400 divs in the house. Divs are small black square. These squares represent each pixel of our program. It does not preoccupy the ** ** HTML & CSS ** of **. Just our file named `app.js`.
+Our `index.html` file contains 5400 divs. Divs are small black square. These squares represent each pixel of our program. You does not preoccupy the **HTML** & **CSS**. Just our file named `app.js`.
 
 ## Step 1 - Add Class
 
@@ -10,25 +10,25 @@ The first thing to do in our "pixels" is to change the color. These little guys 
 
 - Initialize our file `app.js` by loading the document when it is ready.
 
-`` `Javascript
-  $ (Document) .ready (function () {
+```javascript
+  $(document).ready(function () {
   // your code
   });
-`` `
+```
 
 All your code will be between these lines of code.
 
 - Ensure that when you click on a pixel, it becomes white:
-  - In our `index.html` each div class file` box`
-  - `We can use this class as our box` selector. This gives us a way to interact with your `DOM`
+  - In our `index.html` each div have the classe ` box`
+  - We can use this class as our `box` selector. This gives us a way to interact with your `DOM`
 
-`` `Javascript
-  $ ( '. Box'). It ( 'click', function () {
-    $ ( 'Box.') AddClass ( 'white').
+```javascript
+  $('.box').on('click', function () {
+    $('.box').addClass('white');
   });
-`` `
+```
 
-Our `style.css` file a class named` white`. Everything she does is to change the background from black to white boxes.
+Our `style.css` file have a class named `white`. Everything it does is to change the background from black to white boxes.
 
 In theory, it would change the black box to click on `white` box, but what's happening when you try?
 It seems that when you click on a box, all our boxes are changed into white!
