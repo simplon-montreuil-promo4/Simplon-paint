@@ -1,40 +1,38 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
-	var color = "white";
-		//selector //listener //callback
-	$('.box').on("click", function(){
-		$(this).addClass(color); // function body
-	})
+    var color = "white";
 
-	$(".box").on('dblclick', function(){
-		$(this).removeClass(color);
-	})
+    //selector //listener //callback
+    $('.box').on("click", function() {
+        $(this).addClass(color); // function body
+    });
 
-	$('#reset').on('click', function(){
-		$('.box').removeClass('red blue green yellow white');
-	})
+    $(".box").on('dblclick', function() {
+        $(this).removeClass(color);
+    });
 
-	$('#red').on('click', function(){
-		color = 'red';
-	})
+    $('#reset').on('click', function() {
+        $('.box').removeClass('red blue green yellow white');
+    });
 
-	$('#blue').on('click', function(){
-		color = 'blue';
-	})
+    $('#red').on('click', function() {
+        color = 'red';
+    });
 
-	$('#green').on('click', function(){
-		color = 'green';
-	})
+    $('#blue').on('click', function() {
+        color = 'blue';
+    });
 
-	$('#yellow').on('click', function(){
-		color = 'yellow';
-	})
+    $('#green').on('click', function() {
+        color = 'green';
+    });
 
-	$('#white').on('click', function(){
-		color = 'white';
-	})
+    $('#yellow').on('click', function() {
+        color = 'yellow';
+    });
 
-
-
+    $('#white').on('click', function() {
+        color = 'white';
+    });
 
 })
