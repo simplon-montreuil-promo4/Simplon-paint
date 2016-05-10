@@ -79,7 +79,7 @@ It seems we have a reset button. Let it run. Remember how we could send blanket 
 
 Let our color buttons work!
 
-- Create a color variable, and set the default blank. This color variable is the class we add.
+- Create a color variable, and set the default white. This color variable is the class we add.
 
 ```javascript
   var color = 'white';
@@ -109,7 +109,7 @@ Let our color buttons work!
   });
 ```
 
-- Update the `class functionality add` to reflect our color variable rather than our actual class names:
+- Update the `addClass` function to reflect our color variable rather than our actual class names:
 
 ```javascript
   $('.box').on('click', function () {
