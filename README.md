@@ -81,70 +81,70 @@ Let our color buttons work!
 
 - Create a color variable, and set the default blank. This color variable is the class we add.
 
-`` `Javascript
+```javascript
   var color = 'white';
-`` `
+```
 
 - Create a click event for each color that changes the color of variable on click:
 
-`` `Javascript
-  $ ( '# Red'). It ( 'click', function () {
+```javascript
+  $('#red').on('click', function () {
     color = 'red';
   });
 
-  $ ( '# Blue'). It ( 'click', function () {
+  $('#blue').on('click', function () {
     color = 'blue';
   });
 
-  $ ( '# Green'). It ( 'click', function () {
+  $('#green').on('click', function () {
     color = 'green';
   });
 
-  $ ( '# Yellow'). It ( 'click', function () {
+  $('#yellow').on('click', function () {
     color = 'yellow';
   });
 
-  $ ( '# White'). It ( 'click', function () {
+  $('#white').on('click', function () {
     color = 'white';
   });
-`` `
+```
 
 - Update the `class functionality add` to reflect our color variable rather than our actual class names:
 
-`` `Javascript
-  $ ( '. Box'). It ( 'click', function () {
-    $ (This) .addClass (color);
+```javascript
+  $('.box').on('click', function () {
+    $(this).addClass(color);
   });
 
-  $ ( '. Box'). One ( 'dblclick', function () {
-    $ (This) .removeClass (color);
+  $('.box').on('dblclick', function () {
+    $(this).removeClass(color);
   });
 
-  $ ( '# Reset'). It ( 'click', function () {
-    $ ( '. Box'). RemoveClass (color)
+  $('#reset').on('click', function () {
+    $('.box').removeClass(color)
   });
-`` `
+```
 
 One last thing that is a little messed up. Our reset functions and double-click does not work yet. Because we set the variable `color` instead of the action of class suppression, it will only observe the currently selected color.
 
 In the jQuery function we have the ability to delete multiple classes of only separating each class, we want to remove by a space, as follows:
 
-`` `Javascript
-  $ ( 'Box.') RemoveClass ( 'red blue green yellow white.');
-`` `
+```javascript
+  $('.box').removeClass('red blue green yellow white');
+```
 
 What is feasible, but we'll just put those in a variable so that we do not need to write much code:
 
-`` `Javascript
-  var colors = 'white blue green red yellow'
+```javascript
+  var colors = 'white green red blue yellow'
   
-  $ ( '. Box'). One ( 'dblclick', function () {
-    $ (This) .removeClass (colors);
+  $('.box').on('dblclick', function () {
+    $(this).removeClass(colors);
   });
 
-  $ ( '# Reset'). It ( 'click', function () {
-    $ ( '. Box'). RemoveClass (colors)
+  $('#reset').on('click', function () {
+    $('.box').removeClass(colors)
   });
-`` `
+```
 
 And now it's over, we finished our setup application. Feel free to add functionality. Enjoy!
